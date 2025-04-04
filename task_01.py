@@ -22,14 +22,14 @@ def process_request():
         print(f"Processing: {current_request}")
         print(f"Request completed at {time.strftime('%H:%M:%S')}")
 
-        # Mark the task as done (important for queue management)
+        # mark the task as done (for queue management)
         request_queue.task_done()
     else:
         print("Queue is empty - no requests to process")
 
 
 def main():
-    print("|     Service Center Simulation (Press Ctrl+C to exit)     |")
+    print("\n|     Service Center Simulation (Press Ctrl+C to exit)     |")
     print("|----------------------------------------------------------|")
 
     try:
@@ -40,7 +40,7 @@ def main():
 
             process_request()
 
-            # Затримка для імітації часу обробки
+            # processing delay imitation
             time.sleep(1)
 
     except KeyboardInterrupt:

@@ -6,7 +6,7 @@ def is_palindrome(input_string):
 
     cleaned_string = input_string.lower().replace(" ", "")
 
-    # If string is empty or =1 character, it's a palindrome
+    # If string is empty or character=1, it's a palindrome
     if len(cleaned_string) <= 1:
         return True
     for char in cleaned_string:
