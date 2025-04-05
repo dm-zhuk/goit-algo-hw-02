@@ -2,7 +2,7 @@ from collections import deque
 
 
 def is_palindrome(input_string):
-    d = deque()
+    dq = deque()
 
     cleaned_string = input_string.lower().replace(" ", "")
 
@@ -10,12 +10,12 @@ def is_palindrome(input_string):
     if len(cleaned_string) <= 1:
         return True
     for char in cleaned_string:
-        d.append(char)
+        dq.append(char)
 
     # Compare characters from both ends
-    while len(d) > 1:
-        left_char = d.popleft()
-        right_char = d.pop()
+    while len(dq) > 1:
+        left_char = dq.popleft()
+        right_char = dq.pop()
 
         if left_char != right_char:
             return False
@@ -24,6 +24,8 @@ def is_palindrome(input_string):
 
 
 def test_palindrome_checker():
+    print("\n|    Palindrome Test    |")
+    print("|-----------------------|")
     test_cases = [
         "hello",
         " racecar ",
@@ -36,7 +38,7 @@ def test_palindrome_checker():
 
     for test in test_cases:
         result = is_palindrome(test)
-        print(f"On test: '{test}'")
+        print(f"\nOn test: '{test}'")
         print(f"Is a palindrome? {result}\n")
 
 
